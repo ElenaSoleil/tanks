@@ -14,7 +14,7 @@ with open(sys.argv[1]) as f:
 
 pygame.init()
 
-TANK_COLORS = [(50,150,0), (100,50,20)]
+TANK_COLORS = [(50,150,0), (150,50,20)]
 
 font = pygame.font.SysFont("Arial", 20)
 
