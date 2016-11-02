@@ -18,7 +18,7 @@ class Move:
         self.x = -1
         self.y = 0
 
-    def rigth(self):
+    def right(self):
         self.x = 1
         self.y = 0
 
