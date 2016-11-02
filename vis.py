@@ -39,13 +39,13 @@ def draw_frame(surf, frame):
         name = font.render(s, True, TANK_COLORS[t['ind']])
         screen.blit(name, (10, ty))
         ty += 23
-        pygame.draw.circle(surf, TANK_COLORS[t['ind']], map(int,t['pos']), game.TANK_RADIUS)
+        pygame.draw.circle(surf, TANK_COLORS[t['ind']], list(map(int,t['pos'])), game.TANK_RADIUS)
 
     for b in frame['bullets']:
-        pygame.draw.circle(surf, (200, 200, 200), map(int,b['pos']), game.BULLET_RADIUS)
+        pygame.draw.circle(surf, (200, 200, 200), list(map(int,b['pos'])), game.BULLET_RADIUS)
 
     for b in frame['bonuses']:
-        pygame.draw.circle(surf, (200, 100, 100), map(int,b['pos']), game.BONUS_RADIUS)
+        pygame.draw.circle(surf, (200, 100, 100), list(map(int,b['pos'])), game.BONUS_RADIUS)
 
 
 screen = pygame.display.set_mode((game.WIDTH, game.HEIGHT))
