@@ -43,16 +43,20 @@ for i in range(int(sys.argv[3])):
             dx = (m.shot_x - p[0])
             dy = (m.shot_y - p[1])
             l = math.sqrt(dx ** 2 + dy ** 2)
-            dx /= l
-            dy /= l
+            if dx != 0:
+                dx /= l
+            if dy != 0:
+                dy /= l
             x = p[0] + dx * game.TANK_RADIUS
             y = p[1] + dy * game.TANK_RADIUS
             bullets.append({"pos": [x, y], "dir": [dx, dy]})
             t['timeout'] = game.SHOT_TIMEOUT
 
         l = math.sqrt(m.x ** 2 + m.y ** 2)
-        p[0] += m.x / l * game.TANK_SPEED
-        p[1] += m.y / l * game.TANK_SPEED
+        if m.x != 0:
+            p[0] += m.x / l * game.TANK_SPEED
+        if m.y != 0:
+            p[1] += m.y / l * game.TANK_SPEED
         if p[0] < game.TANK_RADIUS:
             p[0] = game.TANK_RADIUS
         if p[1] < game.TANK_RADIUS:
